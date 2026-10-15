@@ -57,17 +57,28 @@ Records in the `ammazing911.virtualsociety` zone:
 | name | type | value | TTL |
 |---|---|---|---|
 | `@` | A | `185.199.108.153` | 300 |
-| `www` | CNAME | `<user>.github.io` | 300 |
+| `www` | CNAME | `mondyker.github.io` | 300 |
 
 `185.199.108.153` is one of GitHub Pages' four anycast IPs
-(`185.199.108–111.153`). Any one of them works.
+(`185.199.108–111.153`). Any one of them works — the IP is not tied to
+your account, so it does not change between repos.
 
 Web3 records:
 
 | key | value |
 |---|---|
-| `browser.redirect_url` | `http://ammazing911.virtualsociety/` |
-| `redirect.website.0` | `http://ammazing911.virtualsociety/` |
+| `browser.redirect_url` | `http://mondyker.github.io/ammazing911/` |
+| `redirect.website.0` | `http://mondyker.github.io/ammazing911/` |
+
+## HTTPS: leave it OFF
+
+Freename web3 domains are **HTTP-only**. GitHub will not provision a
+certificate for the custom domain, so the **Enforce HTTPS** checkbox in
+`Settings → Pages` stays unticked and will error if you try to enable it.
+
+The site is therefore reachable at `http://ammazing911.virtualsociety/`.
+The `mondyker.github.io` URL still has HTTPS — it just 301-redirects to
+the HTTP domain, which is expected.
 
 ## Verify
 
