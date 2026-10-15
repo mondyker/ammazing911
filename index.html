@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>amazing911 — building on the decentralized web</title>
+<meta name="description" content="amazing911 — projects, writing and experiments on the decentralized web. Hosted on ammazing911.virtualsociety.">
+<meta name="theme-color" content="#0a0a14">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="amazing911">
+<meta property="og:description" content="Projects, writing and experiments on the decentralized web.">
+<meta property="og:url" content="http://ammazing911.virtualsociety/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!--
+  ============================================================
+  REDIRECT LOGIC
+  This exact file is served from TWO places:
+    1. https://<user>.github.io/ammazing911/   (hostname ends in github.io)
+    2. http://ammazing911.virtualsociety/        (the Freename domain)
+
+  We only bounce (1) -> (2). Without the hostname check the
+  Freename domain would redirect to itself, forever.
+  ============================================================
+-->
+<script>
+  (function () {
+    var host = location.hostname.toLowerCase();
+    if (host === 'github.io' || host.endsWith('.github.io')) {
+      location.replace('http://ammazing911.virtualsociety/' + location.hash);
+    }
+  })();
+</script>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+</div>
+
+<header class="site-head">
+  <a class="brand" href="#top">
+    <span class="dot" aria-hidden="true"></span>
+    amazing911
+  </a>
+  <nav aria-label="Primary">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <p class="eyebrow"><span class="pill">live</span> ammazing911.virtualsociety</p>
+
+    <h1>
+      Building on the
+      <span class="grad">decentralized</span>
+      web.
+    </h1>
+
+    <p class="lede">
+      I&rsquo;m <strong>amazing911</strong>. I ship small tools, experiment with
+      alt-root domains, and run everything from a static site on GitHub Pages —
+      no servers, no tracking, no lock-in.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn primary" href="#work">See the work</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+
+    <ul class="stats">
+      <li><b data-count="100">0</b><span>% static</span></li>
+      <li><b>0</b><span>trackers</span></li>
+      <li><b>&infin;</b><span>own your name</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section id="work" class="section">
+    <h2 class="section-title">Selected work</h2>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card-icon" aria-hidden="true">&#9673;</div>
+        <h3>This site</h3>
+        <p>
+          A dependency-free landing page served straight off GitHub Pages, mapped
+          to a Freename <code>.virtualsociety</code> domain. Hand-written HTML,
+          CSS and a few lines of JavaScript.
+        </p>
+        <span class="tag">HTML &middot; CSS &middot; JS</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon" aria-hidden="true">&#9670;</div>
+        <h3>Alt-root domains</h3>
+        <p>
+          Exploring what it takes to put a name on the root zone: NS delegation,
+          web3 records, HTTP gateways, and why your domain should outlive any
+          single registrar.
+        </p>
+        <span class="tag">Freename &middot; Web3 DNS</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon" aria-hidden="true">&#9671;</div>
+        <h3>Static-first tooling</h3>
+        <p>
+          Everything I publish is a folder of files. No build step, no bundler,
+          no framework runtime &mdash; it loads fast and it keeps working
+          years from now.
+        </p>
+        <span class="tag">GitHub Pages &middot; Netlify-style</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section">
+    <h2 class="section-title">About</h2>
+    <div class="about">
+      <p>
+        I like small, sharp tools that do one thing well. Most of my work lives
+        in a browser tab, a git repo, or a DNS zone file &mdash; not in a
+        database that someone else has to keep alive for me.
+      </p>
+      <p>
+        This page has zero third-party requests. The type is the system font,
+        the graphics are CSS, and the only network hop after DNS is the one that
+        served this HTML.
+      </p>
+      <ul class="checks">
+        <li>No trackers, no cookies, no analytics</li>
+        <li>Works on a phone with a slow connection</li>
+        <li>The domain is portable &mdash; move it anywhere, anytime</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-card">
+      <p>Open to collaborations, conversations, and strange ideas.</p>
+      <div class="links">
+        <!-- Replace href + label with your real profiles -->
+        <a class="chip" href="https://github.com/your-username" rel="noopener">GitHub</a>
+        <a class="chip" href="https://x.com/your-username" rel="noopener">X / Twitter</a>
+        <a class="chip" href="mailto:hello@example.com">Email</a>
+        <!-- Freename web3 gateway record, if you set one on the domain -->
+        <a class="chip mono" href="http://ammazing911.virtualsociety/">
+          ammazing911.virtualsociety
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <p>
+    &copy; <span id="year">2026</span> amazing911 &middot;
+    <span class="mono">ammazing911.virtualsociety</span>
+  </p>
+  <p class="tiny">
+    Served from GitHub Pages &middot; Named on the Freename alt-root
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
