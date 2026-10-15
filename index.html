@@ -30,7 +30,15 @@
   ============================================================
 -->
 <script>
+  /* Flip to true once ammazing911.virtualsociety resolves to GitHub Pages.
+     While false, the GitHub Pages URL serves this page directly instead of
+     bouncing visitors to the domain (which currently resolves to Freename's
+     default host and returns HTTP 502). */
+  var REDIRECT_TO_DOMAIN = false;
+
   (function () {
+    if (!REDIRECT_TO_DOMAIN) return;
+
     var host = location.hostname.toLowerCase();
     if (host === 'github.io' || host.endsWith('.github.io')) {
       location.replace('http://ammazing911.virtualsociety/' + location.hash);
