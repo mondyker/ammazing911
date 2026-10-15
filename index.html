@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>amazing911 — building on the decentralized web</title>
-<meta name="description" content="amazing911 — projects, writing and experiments on the decentralized web. Hosted on ammazing911.virtualsociety.">
-<meta name="theme-color" content="#0a0a14">
+<title>amazing911 — ammazing911.virtualsociety</title>
+<meta name="description" content="amazing911 — a personal site on a domain I control. Static HTML, zero trackers, served from GitHub Pages.">
+<meta name="theme-color" content="#f3f0e9">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="amazing911">
-<meta property="og:description" content="Projects, writing and experiments on the decentralized web.">
+<meta property="og:description" content="A personal site on a domain I control. Static HTML, zero trackers.">
 <meta property="og:url" content="http://ammazing911.virtualsociety/">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -21,12 +21,12 @@
 <!--
   ============================================================
   REDIRECT LOGIC
-  This exact file is served from TWO places:
+  The same index.html is served from TWO places:
     1. https://<user>.github.io/ammazing911/   (hostname ends in github.io)
-    2. http://ammazing911.virtualsociety/        (the Freename domain)
+    2. http://ammazing911.virtualsociety/       (the domain I point DNS at)
 
-  We only bounce (1) -> (2). Without the hostname check the
-  Freename domain would redirect to itself, forever.
+  We only bounce (1) -> (2). Without the hostname guard the
+  domain would redirect to itself, forever.
   ============================================================
 -->
 <script>
@@ -40,15 +40,9 @@
 
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="aurora" aria-hidden="true">
-  <span class="blob b1"></span>
-  <span class="blob b2"></span>
-  <span class="blob b3"></span>
-</div>
-
-<header class="site-head">
-  <a class="brand" href="#top">
-    <span class="dot" aria-hidden="true"></span>
+<header class="topbar">
+  <a class="logo" href="#top">
+    <span class="square" aria-hidden="true"></span>
     amazing911
   </a>
   <nav aria-label="Primary">
@@ -58,110 +52,121 @@
   </nav>
 </header>
 
-<main id="main">
+<main id="main" class="wrap">
 
   <!-- ============ HERO ============ -->
-  <section class="hero" id="top">
-    <p class="eyebrow"><span class="pill">live</span> ammazing911.virtualsociety</p>
+  <section class="poster" id="top">
+    <p class="kicker">
+      <span class="live">PORTFOLIO</span>
+      ammazing911.virtualsociety
+    </p>
 
     <h1>
-      Building on the
-      <span class="grad">decentralized</span>
-      web.
+      A personal site<br>
+      I actually <span class="hl">own</span>.
     </h1>
 
     <p class="lede">
-      I&rsquo;m <strong>amazing911</strong>. I ship small tools, experiment with
-      alt-root domains, and run everything from a static site on GitHub Pages —
-      no servers, no tracking, no lock-in.
+      I&rsquo;m <strong>amazing911</strong>. I build small tools, keep hold of my own
+      domain, and ship everything as plain files &mdash; no servers, no tracking,
+      nothing that can be switched off from under me.
     </p>
 
     <div class="cta-row">
-      <a class="btn primary" href="#work">See the work</a>
-      <a class="btn ghost" href="#contact">Get in touch</a>
+      <a class="btn" href="#work">See the work</a>
+      <a class="btn btn--ghost" href="#contact">Get in touch</a>
     </div>
 
-    <ul class="stats">
-      <li><b data-count="100">0</b><span>% static</span></li>
-      <li><b>0</b><span>trackers</span></li>
-      <li><b>&infin;</b><span>own your name</span></li>
-    </ul>
+    <dl class="stats">
+      <div><dt>100%</dt><dd>static</dd></div>
+      <div><dt>0</dt><dd>trackers</dd></div>
+      <div><dt>&infin;</dt><dd>lifespan</dd></div>
+    </dl>
   </section>
 
   <!-- ============ WORK ============ -->
-  <section id="work" class="section">
-    <h2 class="section-title">Selected work</h2>
+  <section id="work" class="block">
+    <h2 class="block__title"><span>01</span> Selected work</h2>
 
-    <div class="grid">
-      <article class="card">
-        <div class="card-icon" aria-hidden="true">&#9673;</div>
-        <h3>This site</h3>
-        <p>
-          A dependency-free landing page served straight off GitHub Pages, mapped
-          to a Freename <code>.virtualsociety</code> domain. Hand-written HTML,
-          CSS and a few lines of JavaScript.
-        </p>
-        <span class="tag">HTML &middot; CSS &middot; JS</span>
-      </article>
+    <ul class="rows">
+      <li class="row">
+        <span class="row__num">01</span>
+        <div class="row__body">
+          <h3>This site</h3>
+          <p>
+            A dependency-free landing page served from GitHub Pages and mapped to
+            a domain I control. Hand-written HTML, CSS and a few lines of
+            JavaScript. No build step, no bundler, no framework.
+          </p>
+        </div>
+        <span class="row__tag">HTML &middot; CSS &middot; JS</span>
+      </li>
 
-      <article class="card">
-        <div class="card-icon" aria-hidden="true">&#9670;</div>
-        <h3>Alt-root domains</h3>
-        <p>
-          Exploring what it takes to put a name on the root zone: NS delegation,
-          web3 records, HTTP gateways, and why your domain should outlive any
-          single registrar.
-        </p>
-        <span class="tag">Freename &middot; Web3 DNS</span>
-      </article>
+      <li class="row">
+        <span class="row__num">02</span>
+        <div class="row__body">
+          <h3>Owning your name</h3>
+          <p>
+            Nameservers, TTLs, zone files and portability &mdash; making sure a
+            domain outlives whoever issued it, and that the whole setup can be
+            rebuilt from a folder of notes.
+          </p>
+        </div>
+        <span class="row__tag">DNS</span>
+      </li>
 
-      <article class="card">
-        <div class="card-icon" aria-hidden="true">&#9671;</div>
-        <h3>Static-first tooling</h3>
-        <p>
-          Everything I publish is a folder of files. No build step, no bundler,
-          no framework runtime &mdash; it loads fast and it keeps working
-          years from now.
-        </p>
-        <span class="tag">GitHub Pages &middot; Netlify-style</span>
-      </article>
-    </div>
+      <li class="row">
+        <span class="row__num">03</span>
+        <div class="row__body">
+          <h3>Static-first tooling</h3>
+          <p>
+            Everything I publish is a folder of files. No database, no framework
+            runtime, nothing to keep running. It loads fast and it still works
+            years from now.
+          </p>
+        </div>
+        <span class="row__tag">GitHub Pages</span>
+      </li>
+    </ul>
   </section>
 
   <!-- ============ ABOUT ============ -->
-  <section id="about" class="section">
-    <h2 class="section-title">About</h2>
-    <div class="about">
+  <section id="about" class="block split">
+    <h2 class="block__title"><span>02</span> About</h2>
+
+    <div class="prose">
       <p>
         I like small, sharp tools that do one thing well. Most of my work lives
         in a browser tab, a git repo, or a DNS zone file &mdash; not in a
-        database that someone else has to keep alive for me.
+        database that somebody else has to keep alive for me.
       </p>
       <p>
-        This page has zero third-party requests. The type is the system font,
+        This page makes zero third-party requests. The type is the system font,
         the graphics are CSS, and the only network hop after DNS is the one that
         served this HTML.
       </p>
-      <ul class="checks">
+
+      <ul class="ticks">
         <li>No trackers, no cookies, no analytics</li>
-        <li>Works on a phone with a slow connection</li>
-        <li>The domain is portable &mdash; move it anywhere, anytime</li>
+        <li>Comfortable on a phone with a bad connection</li>
+        <li>The domain is portable &mdash; move it anywhere, any time</li>
       </ul>
     </div>
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section id="contact" class="section">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-card">
-      <p>Open to collaborations, conversations, and strange ideas.</p>
-      <div class="links">
-        <!-- Replace href + label with your real profiles -->
+  <section id="contact" class="block">
+    <h2 class="block__title"><span>03</span> Contact</h2>
+
+    <div class="panel">
+      <p>Open to collaborations, long conversations, and strange ideas.</p>
+
+      <!-- Replace href + label with your real profiles -->
+      <div class="chips">
         <a class="chip" href="https://github.com/your-username" rel="noopener">GitHub</a>
         <a class="chip" href="https://x.com/your-username" rel="noopener">X / Twitter</a>
         <a class="chip" href="mailto:hello@example.com">Email</a>
-        <!-- Freename web3 gateway record, if you set one on the domain -->
-        <a class="chip mono" href="http://ammazing911.virtualsociety/">
+        <a class="chip chip--mono" href="http://ammazing911.virtualsociety/">
           ammazing911.virtualsociety
         </a>
       </div>
@@ -170,14 +175,11 @@
 
 </main>
 
-<footer class="site-foot">
-  <p>
-    &copy; <span id="year">2026</span> amazing911 &middot;
-    <span class="mono">ammazing911.virtualsociety</span>
-  </p>
-  <p class="tiny">
-    Served from GitHub Pages &middot; Named on the Freename alt-root
-  </p>
+<footer class="foot">
+  <div class="wrap foot__in">
+    <p>&copy; <span id="year">2026</span> amazing911</p>
+    <p class="mono">ammazing911.virtualsociety &middot; GitHub Pages &middot; My own domain</p>
+  </div>
 </footer>
 
 <script src="script.js"></script>
